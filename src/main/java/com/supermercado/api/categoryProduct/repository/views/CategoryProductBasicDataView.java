@@ -1,0 +1,15 @@
+package com.supermercado.api.categoryProduct.repository.views;
+
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+
+import java.util.List;
+
+@JsonPropertyOrder({"id", "name", "slug", "sortOrder", "isActive", "children"})
+public interface CategoryProductBasicDataView {
+    Long getId();
+    String getName();
+    String getSlug();
+    Integer getSortOrder();
+    Boolean getIsActive();
+    List<CategoryProductBasicDataView> getChildren();
+}

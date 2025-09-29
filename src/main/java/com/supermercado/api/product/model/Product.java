@@ -1,0 +1,123 @@
+package com.supermercado.api.product.model;
+
+import com.supermercado.api.categoryProduct.model.CategoryProduct;
+import jakarta.persistence.*;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
+
+import java.math.BigDecimal;
+import java.time.LocalDateTime;
+import java.util.Objects;
+
+@Entity
+@Table(name = "products")
+public class Product {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @Column(nullable = false, length = 255)
+    private String name;
+
+    @Column(columnDefinition = "TEXT")
+    private String description;
+
+    @Column(length = 100)
+    private String brand;
+
+    @Column(nullable = false, precision = 10, scale = 2)
+    private BigDecimal price;
+
+    @Column(name = "promotion_price", precision = 10, scale = 2)
+    private BigDecimal promotionPrice;
+
+    @Column(nullable = false)
+    private Integer quantity;
+
+    @Column(name = "is_active")
+    private Boolean isActive = Boolean.TRUE;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "category_id", nullable = false)
+    private CategoryProduct category;
+
+    @CreationTimestamp
+    @Column(name = "created_at", updatable = false)
+    private LocalDateTime createdAt;
+
+    @UpdateTimestamp
+    @Column(name = "updated_at")
+    private LocalDateTime updatedAt;
+
+    public Product() {}
+
+    public Product(String name, String description, String brand, BigDecimal price,
+                   BigDecimal promotionPrice, Integer quantity, Boolean isActive, CategoryProduct category) {
+        this.name = name;
+        this.description = description;
+        this.brand = brand;
+        this.price = price;
+        this.promotionPrice = promotionPrice;
+        this.quantity = quantity;
+        this.isActive = isActive;
+        this.category = category;
+    }
+
+    // Getters e setters
+    public Long getId() { return id; }
+    public void setId(Long id) { this.id = id; }
+
+    public String getName() { return name; }
+    public void setName(String name) { this.name = name; }
+
+    public String getDescription() { return description; }
+    public void setDescription(String description) { this.description = description; }
+
+    public String getBrand() { return brand; }
+    public void setBrand(String brand) { this.brand = brand; }
+
+    public BigDecimal getPrice() { return price; }
+    public void setPrice(BigDecimal price) { this.price = price; }
+
+    public BigDecimal getPromotionPrice() { return promotionPrice; }
+    public void setPromotionPrice(BigDecimal promotionPrice) { this.promotionPrice = promotionPrice; }
+
+    public Integer getQuantity() { return quantity; }
+    public void setQuantity(Integer quantity) { this.quantity = quantity; }
+
+    public Boolean getIsActive() { return isActive; }
+    public void setIsActive(Boolean isActive) { this.isActive = isActive; }
+
+    public CategoryProduct getCategoryId() { return category; }
+    public void setCategoryId(CategoryProduct categoryId) { this.category = category; }
+
+    public LocalDateTime getCreatedAt() { return createdAt; }
+    public LocalDateTime getUpdatedAt() { return updatedAt; }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Product product = (Product) o;
+        return Objects.equals(id, product.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(id);
+    }
+
+    @Override
+    public String toString() {
+        return "Product{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", price=" + price +
+                ", promotionPrice=" + promotionPrice +
+                ", quantity=" + quantity +
+                ", isActive=" + isActive +
+                ", category=" + category +
+                '}';
+    }
+}
