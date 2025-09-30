@@ -1,7 +1,7 @@
-package com.supermercado.api.categoryProduct.controller;
+package com.supermercado.api.modules.categoryProduct.controller;
 
-import com.supermercado.api.categoryProduct.repository.CategoryProductRepository;
-import com.supermercado.api.categoryProduct.repository.views.CategoryProductBasicDataView;
+import com.supermercado.api.modules.categoryProduct.repository.CategoryProductRepository;
+import com.supermercado.api.modules.categoryProduct.repository.views.CategoryProductBasicDataView;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;

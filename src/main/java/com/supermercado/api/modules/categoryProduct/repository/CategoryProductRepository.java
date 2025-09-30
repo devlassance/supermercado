@@ -1,7 +1,7 @@
-package com.supermercado.api.categoryProduct.repository;
+package com.supermercado.api.modules.categoryProduct.repository;
 
-import com.supermercado.api.categoryProduct.model.CategoryProduct;
-import com.supermercado.api.categoryProduct.repository.views.CategoryProductBasicDataView;
+import com.supermercado.api.modules.categoryProduct.model.CategoryProduct;
+import com.supermercado.api.modules.categoryProduct.repository.views.CategoryProductBasicDataView;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

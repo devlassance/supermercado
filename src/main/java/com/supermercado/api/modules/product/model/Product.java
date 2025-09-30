@@ -1,7 +1,7 @@
-package com.supermercado.api.product.model;
+package com.supermercado.api.modules.product.model;
 
-import com.supermercado.api.brand.model.Brand;
-import com.supermercado.api.categoryProduct.model.CategoryProduct;
+import com.supermercado.api.modules.brand.model.Brand;
+import com.supermercado.api.modules.categoryProduct.model.CategoryProduct;
 import jakarta.persistence.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;

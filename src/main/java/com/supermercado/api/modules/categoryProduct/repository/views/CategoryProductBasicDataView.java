@@ -1,4 +1,4 @@
-package com.supermercado.api.categoryProduct.repository.views;
+package com.supermercado.api.modules.categoryProduct.repository.views;
 
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 

@@ -1,4 +1,4 @@
-package com.supermercado.api.brand.model;
+package com.supermercado.api.modules.brand.model;
 
 import jakarta.persistence.*;
 import org.hibernate.annotations.CreationTimestamp;
