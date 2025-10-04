@@ -91,8 +91,8 @@ public class Product {
     public Boolean getIsActive() { return isActive; }
     public void setIsActive(Boolean isActive) { this.isActive = isActive; }
 
-    public CategoryProduct getCategoryId() { return category; }
-    public void setCategoryId(CategoryProduct categoryId) { this.category = category; }
+    public CategoryProduct getCategory() { return category; }
+    public void setCategory(CategoryProduct category) { this.category = category; }
 
     public LocalDateTime getCreatedAt() { return createdAt; }
     public LocalDateTime getUpdatedAt() { return updatedAt; }
